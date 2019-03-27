@@ -32,7 +32,7 @@ app.get('/',(req,res) => {
 })
 
 // Require listitem routes
-require('./app/routes/listitem.routes.js')(app);
+require('./app/routes/item.routes.js')(app);
 
 // listen to requests
 app.listen(port, ()=> {
