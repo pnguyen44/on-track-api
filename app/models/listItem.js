@@ -1,16 +1,14 @@
 const mongoose = require('mongoose')
 
-const listitemSchema = mongoose.Schema({
+const listitemSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true
   },
-  completed: Boolean,
-  {
+  completed: Boolean}, {
     timestamps: true
-  }
-})
+  })
 
-const Listitem = mongoose.model('Listitem, listitemSchema')
+  const Listitem = mongoose.model('Listitem', listitemSchema)
 
 module.exports = Listitem
