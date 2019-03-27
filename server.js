@@ -31,6 +31,9 @@ app.get('/',(req,res) => {
   res.json({'message': 'Welcome to the to-do app. Create a list of to dos.'})
 })
 
+// Require Notes routes
+require('./app/routes/listitem.routes.js')(app);
+
 // listen to requests
 app.listen(port, ()=> {
   console.log(`Server is listening on ${port}`)
