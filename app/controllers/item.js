@@ -44,7 +44,6 @@ exports.show = (req,res,next) => {
 
 // update a single Item
 exports.update = (req,res,next) => {
-  console.log(req.body)
   Item.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then(item => {
       res.send(item)
@@ -54,14 +53,14 @@ exports.update = (req,res,next) => {
 
 // delete a single Item
 exports.delete = function (req,res,next) {
-    Item.findByIdAndRemove(req.params.id)
-      .then(item => {
-        if (!item) {
-          return res.status(404).send({
-            message: `Item with id ${req.params.id} not found`
-          })
-        }
-        res.send({message: 'Item delete successfully'})
-      })
-      .catch(next)
+  Item.findByIdAndRemove(req.params.id)
+    .then(item => {
+      if (!item) {
+        return res.status(404).send({
+          message: `Item with id ${req.params.id} not found`
+        })
+      }
+      res.send({message: 'Item delete successfully'})
+    })
+    .catch(next)
 }
