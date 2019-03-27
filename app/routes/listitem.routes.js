@@ -7,12 +7,12 @@ module.exports = app => {
   // retrieve all listitems
   app.get('/listitems', listitems.index)
 
-  // get a single listitem  with listitemId
-  app.get('/listitems/:listitemId', listitems.show)
+  // get a single listitem  with id
+  app.get('/listitems/:id', listitems.show)
 
-  // update a listitem with listitemId
-  app.put('/listitems/:listitemId', listitems.update)
+  // update a listitem with id
+  app.put('/listitems/:id', listitems.update)
 
-  // delete a listitem with listitemId
-  app.delete('/listitems/:listitemId', listitems.delete)
+  // delete a listitem with id
+  app.delete('/listitems/:id', listitems.delete)
 }
