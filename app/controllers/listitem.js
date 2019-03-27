@@ -9,12 +9,21 @@ exports.create = (req,res) => {
     })
     .catch(err => {
       res.json(500)
+      // res.status(500).send({
+      //   message: err.message || "Error on creating a listitem"
+      // });
     })
 }
 
 // Retrieve and return all listitems
 exports.index = (req,res) => {
-
+  Listitem.find()
+    .then(listitems => {
+      res.json(listitems)
+    })
+    .catch(err => {
+      res.json(500)
+    })
 }
 
 // get a single listitem with listitemId
