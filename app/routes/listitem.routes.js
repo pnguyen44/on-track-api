@@ -5,14 +5,14 @@ module.exports = app => {
   app.post('/listitems', listitems.create)
 
   // retrieve all listitems
-  app.get('listitems', listitems.index)
+  app.get('/listitems', listitems.index)
 
   // get a single listitem  with listitemId
-  app.get('listitems/:listitemId', listitems.show)
+  app.get('/listitems/:listitemId', listitems.show)
 
   // update a listitem with listitemId
-  app.put('listitems/:listitemId', listitems.update)
+  app.put('/listitems/:listitemId', listitems.update)
 
   // delete a listitem with listitemId
-  app.delete('listitems/:listitemId', listitems.delete)
+  app.delete('/listitems/:listitemId', listitems.delete)
 }
