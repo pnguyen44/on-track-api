@@ -2,7 +2,10 @@ const Item = require('../models/item')
 
 // Create  and save a new Item
 exports.create = (req,res) => {
-  Item.create(req.body)
+  const item = Object.assign(req.body, {
+    completed: false
+  })
+  Item.create(item)
     .then((item) => {
       res.status(201)
       res.json(item)
