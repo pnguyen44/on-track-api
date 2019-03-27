@@ -11,7 +11,7 @@ module.exports = app => {
   app.get('listitems/:listitemId', listitems.show)
 
   // update a listitem with listitemId
-  app.update('listitems/:listitemId', listitems.update)
+  app.put('listitems/:listitemId', listitems.update)
 
   // delete a listitem with listitemId
   app.delete('listitems/:listitemId', listitems.delete)
