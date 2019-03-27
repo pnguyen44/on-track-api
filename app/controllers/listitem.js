@@ -5,10 +5,10 @@ exports.create = (req,res) => {
   const listitem = req.body
   Listitem.create(listitem)
     .then(listitem => {
-      res.json(201)
+      res.status(201)
     })
     .catch(err => {
-      res.json(500)
+      res.status(500)
       // res.status(500).send({
       //   message: err.message || "Error on creating a listitem"
       // });
@@ -16,14 +16,12 @@ exports.create = (req,res) => {
 }
 
 // Retrieve and return all listitems
-exports.index = (req,res) => {
+exports.index = (req,res,next) => {
   Listitem.find()
     .then(listitems => {
       res.json(listitems)
     })
-    .catch(err => {
-      res.json(500)
-    })
+    .catch(next)
 }
 
 // get a single listitem with listitemId
@@ -42,8 +40,10 @@ exports.show = (req,res,next) => {
 }
 
 // update a single listitem with listitemId
-exports.update = (req,res) => {
-
+exports.update = (req,res,next) => {
+  req.listitem.update(req.body.listitem)
+    .then(() => res.sendStatus(204))
+    .catch(next)
 }
 
 // delete a single listeitem with listitemId
