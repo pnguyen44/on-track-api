@@ -47,6 +47,15 @@ exports.update = (req,res,next) => {
 }
 
 // delete a single listeitem with listitemId
-exports.delete = function (req,res) {
-
+exports.delete = function (req,res,next) {
+    Listitem.findByIdAndRemove(req.params.id)
+      .then(listitem => {
+        if (!listitem) {
+          return res.status(404).send({
+            message: `listitem with id ${req.params.id} not found`
+          })
+        }
+        res.send({message: 'listitem delete successfully'})
+      })
+      .catch(next)
 }
