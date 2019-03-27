@@ -31,7 +31,7 @@ app.get('/',(req,res) => {
   res.json({'message': 'Welcome to the to-do app. Create a list of to dos.'})
 })
 
-// Require listitem routes
+// Require item routes
 require('./app/routes/item.routes.js')(app);
 
 // listen to requests
