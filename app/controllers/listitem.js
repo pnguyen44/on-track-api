@@ -27,8 +27,18 @@ exports.index = (req,res) => {
 }
 
 // get a single listitem with listitemId
-exports.show = (req,res) => {
-
+exports.show = (req,res,next) => {
+  Listitem.findById(req.params.id)
+    .then(listitem => {
+      if (!listitem) {
+        return res.status(404).send({
+          message: 'listitem note found with id ' + req.params.id
+        })
+      }
+      // res.send(listitem)
+      res.json(listitem)
+    })
+    .catch(next)
 }
 
 // update a single listitem with listitemId
