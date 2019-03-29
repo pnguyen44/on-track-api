@@ -1,7 +1,31 @@
 const Item = require('../models/item')
 
+// Retrieve and return all item
+const index = (req,res,next) => {
+  Item.find()
+    .then(item => {
+      res.json(item)
+    })
+    .catch(next)
+}
+
+// get a single Item
+const show = (req,res,next) => {
+  Item.findById(req.params.id)
+    .then(item => {
+      if (!item) {
+        return res.status(404).send({
+          message: 'Item not found with id ' + req.params.id
+        })
+      }
+      // res.send(Item)
+      res.json(item)
+    })
+    .catch(next)
+}
+
 // Create  and save a new Item
-exports.create = (req,res) => {
+const create = (req,res) => {
   const item = Object.assign(req.body, {
     completed: false
   })
@@ -18,32 +42,8 @@ exports.create = (req,res) => {
     })
 }
 
-// Retrieve and return all item
-exports.index = (req,res,next) => {
-  Item.find()
-    .then(item => {
-      res.json(item)
-    })
-    .catch(next)
-}
-
-// get a single Item
-exports.show = (req,res,next) => {
-  Item.findById(req.params.id)
-    .then(item => {
-      if (!item) {
-        return res.status(404).send({
-          message: 'Item not found with id ' + req.params.id
-        })
-      }
-      // res.send(Item)
-      res.json(item)
-    })
-    .catch(next)
-}
-
 // update a single Item
-exports.update = (req,res,next) => {
+const update = (req,res,next) => {
   Item.findByIdAndUpdate(req.params.id, req.body, {new:true})
     .then(item => {
       res.send(item)
@@ -52,7 +52,7 @@ exports.update = (req,res,next) => {
 }
 
 // delete a single Item
-exports.delete = function (req,res,next) {
+const destroy = (req,res,next) => {
   Item.findByIdAndRemove(req.params.id)
     .then(item => {
       if (!item) {
@@ -63,4 +63,13 @@ exports.delete = function (req,res,next) {
       res.send({message: 'Item delete successfully'})
     })
     .catch(next)
+}
+
+
+module.exports = {
+  index,
+  show,
+  create,
+  update,
+  destroy
 }
