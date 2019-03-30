@@ -37,8 +37,9 @@ A full stack app that allows users to create a list of of to-do items.  This app
   - MongoDB
   - Heroku
 
-  ## Resources Used
-  - MDN
-  - Github
-  - Stack Overflow
-  - React Documentation
+## Resources Used
+- MDN
+- Stack Overflow
+- Express Documentation
+- MongoDB Documentation
+- Mongoose Documentation
