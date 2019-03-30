@@ -11,8 +11,6 @@ module.exports = app => {
   app.post('/items', items.create)
 
   // update a item with id
-  app.put('/items/:id', items.update)
-
   app.patch('/items/:id', items.update)
 
   // delete a item with id
