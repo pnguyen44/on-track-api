@@ -1,7 +1,7 @@
 # on-track-api
 A full stack app that allows users to create a list of of to-do items.  This app was created using node.js, Express, React, JavaScript, HTML, and CSS.
 
-<img width="1440" alt="on-track app" src="https://i.imgur.com/yeFiKx7.png">
+<img width="1440" alt="on-track app" src="https://i.imgur.com/1XBgsMw.png">
 
 ## Deployed apps and repositories
 | Resource   | URL            |
@@ -31,15 +31,8 @@ A full stack app that allows users to create a list of of to-do items.  This app
   - CSS
   - Node Package Manager
 
-## Back End
-- Node.js
+- Back End
+  - Node.js
   - Express
   - MongoDB
   - Heroku
-
-## Resources Used
-- MDN
-- Stack Overflow
-- Express Documentation
-- MongoDB Documentation
-- Mongoose Documentation
