@@ -31,8 +31,8 @@ app.get('/',(req,res) => {
   res.json({'message': 'Welcome to the to-do app. Create a list of to dos.'})
 })
 
-// Require item routes
-require('./app/routes/item.js')(app);
+// Require todo routes
+require('./app/routes/todo.js')(app);
 
 middleware.after(app)
 

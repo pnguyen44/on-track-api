@@ -9,6 +9,6 @@ const itemSchema = new mongoose.Schema({
     timestamps: true
   })
 
-  const Item = mongoose.model('Item', itemSchema)
+  const Todo = mongoose.model('Todo', itemSchema)
 
-module.exports = Item
+module.exports = Todo
