@@ -14,10 +14,10 @@ const database = require('./config/database')
 const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/on-track-api-test'
+const MONGOLAB_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/on-track-api-test'
 
 //Connect to database
-  mongoose.connect(MONGODB_URI, {
+  mongoose.connect(MONGOLAB_URI, {
     useNewUrlParser: true
   }).then(() => {
     console.log('Successfully connected to the database')

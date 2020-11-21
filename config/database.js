@@ -1,6 +1,6 @@
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/on-track-api-test'
+const MONGOLAB_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/on-track-api-test'
 
 module.exports = {
-    uri: MONGODB_URI
+    uri: MONGOLAB_URI
 }
