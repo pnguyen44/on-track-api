@@ -5,15 +5,16 @@ A full stack app that allows users to add, update, and delete to-do items. It wa
 <img width="1440" alt="on-track app" src="https://i.imgur.com/TAHEaav.png">
 
 ## Deployed apps and repositories
+
 | Resource   | URL            |
 |------------|----------------|
-| client side, deployed    | https://pnguyen44.github.io/on-track/             |
-| client app repo   | https://github.com/pnguyen44/on-track            |
-| server api, deployed | https://on-track-api.herokuapp.com/            |
-| server api repo  | https://github.com/pnguyen44/on-track-api    |
-
+| client side, deployed    | <https://pnguyen44.github.io/on-track/>             |
+| client app repo   | <https://github.com/pnguyen44/on-track>            |
+| server api, deployed | <https://on-track-api.herokuapp.com/>            |
+| server api repo  | <https://github.com/pnguyen44/on-track-api>    |
 
 ## API Endpoints
+
 | Verb   | URI Pattern            | Controller#Action |
 |--------|------------------------|-------------------|
 | GET    | `/todos`               | `todos#index`     |
@@ -22,7 +23,23 @@ A full stack app that allows users to add, update, and delete to-do items. It wa
 | PATCH  | `/todos/:id`           | `todos#update`    |
 | DELETE | `/todos/:id`           | `todos#destroy`   |
 
+## Development
+
+### Install Dependencies
+
+```bash
+npm install
+
+```
+
+### Start server
+
+```bash
+npm run start
+```
+
 ## Technologies Used
+
 - Front End
   - React JS
   - React Router
