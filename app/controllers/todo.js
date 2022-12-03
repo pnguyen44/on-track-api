@@ -1,5 +1,9 @@
 const Todo = require('../models/todo');
 
+const health = (req, res, next) => {
+  res.status(200).send({ ok: true });
+};
+
 // Retrieve and return all todo
 const index = (req, res, next) => {
   Todo.find()
@@ -18,13 +22,12 @@ const show = (req, res, next) => {
           message: 'Todo not found with id ' + req.params.id,
         });
       }
-      // res.send(todo)
       res.json(todo);
     })
     .catch(next);
 };
 
-// Create  and save a new todo
+// Create and save a new todo
 const create = (req, res) => {
   const todo = Object.assign(req.body, {
     completed: false,
@@ -35,7 +38,6 @@ const create = (req, res) => {
       res.json(todo);
     })
     .catch((err) => {
-      // res.status(500)
       res.status(500).send({
         message: err.message || 'Error on creating an todo',
       });
@@ -66,6 +68,7 @@ const destroy = (req, res, next) => {
 };
 
 module.exports = {
+  health,
   index,
   show,
   create,

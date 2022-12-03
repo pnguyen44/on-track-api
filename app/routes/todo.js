@@ -1,6 +1,9 @@
 module.exports = (app) => {
   const todos = require('../controllers/todo');
 
+  // health check
+  app.get('/health', todos.health);
+
   // retrieve all todos
   app.get('/todos', todos.index);
 
